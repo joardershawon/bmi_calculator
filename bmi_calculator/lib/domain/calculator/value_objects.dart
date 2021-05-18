@@ -48,3 +48,16 @@ class Weight extends ValueObject<int> {
   }
   const Weight._(value);
 }
+
+class Age extends ValueObject<int> {
+  @override
+  Either<ValueFailure<int>, int> get value => throw UnimplementedError();
+
+  static const minAge = 10;
+  factory Age(int input) {
+    return Age._(
+      input,
+    );
+  }
+  const Age._(value);
+}
