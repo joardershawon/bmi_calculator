@@ -22,7 +22,7 @@ class _$CalculatorEventTearOff {
     );
   }
 
-  _HeightChanged heightChanged(int height) {
+  _HeightChanged heightChanged(double height) {
     return _HeightChanged(
       height,
     );
@@ -34,8 +34,9 @@ class _$CalculatorEventTearOff {
     );
   }
 
-  _AgeChanged ageChanged(int age) {
+  _AgeChanged ageChanged(String iconStr, int age) {
     return _AgeChanged(
+      iconStr,
       age,
     );
   }
@@ -55,18 +56,18 @@ mixin _$CalculatorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String gender) genderChanged,
-    required TResult Function(int height) heightChanged,
+    required TResult Function(double height) heightChanged,
     required TResult Function(int weight) weightChanged,
-    required TResult Function(int age) ageChanged,
+    required TResult Function(String iconStr, int age) ageChanged,
     required TResult Function(Calculator calculator) bmiButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String gender)? genderChanged,
-    TResult Function(int height)? heightChanged,
+    TResult Function(double height)? heightChanged,
     TResult Function(int weight)? weightChanged,
-    TResult Function(int age)? ageChanged,
+    TResult Function(String iconStr, int age)? ageChanged,
     TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) =>
@@ -175,9 +176,9 @@ class _$_GenderChanged implements _GenderChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String gender) genderChanged,
-    required TResult Function(int height) heightChanged,
+    required TResult Function(double height) heightChanged,
     required TResult Function(int weight) weightChanged,
-    required TResult Function(int age) ageChanged,
+    required TResult Function(String iconStr, int age) ageChanged,
     required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return genderChanged(gender);
@@ -187,9 +188,9 @@ class _$_GenderChanged implements _GenderChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String gender)? genderChanged,
-    TResult Function(int height)? heightChanged,
+    TResult Function(double height)? heightChanged,
     TResult Function(int weight)? weightChanged,
-    TResult Function(int age)? ageChanged,
+    TResult Function(String iconStr, int age)? ageChanged,
     TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
@@ -242,7 +243,7 @@ abstract class _$HeightChangedCopyWith<$Res> {
   factory _$HeightChangedCopyWith(
           _HeightChanged value, $Res Function(_HeightChanged) then) =
       __$HeightChangedCopyWithImpl<$Res>;
-  $Res call({int height});
+  $Res call({double height});
 }
 
 /// @nodoc
@@ -264,7 +265,7 @@ class __$HeightChangedCopyWithImpl<$Res>
       height == freezed
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
     ));
   }
 }
@@ -275,7 +276,7 @@ class _$_HeightChanged implements _HeightChanged {
   const _$_HeightChanged(this.height);
 
   @override
-  final int height;
+  final double height;
 
   @override
   String toString() {
@@ -303,9 +304,9 @@ class _$_HeightChanged implements _HeightChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String gender) genderChanged,
-    required TResult Function(int height) heightChanged,
+    required TResult Function(double height) heightChanged,
     required TResult Function(int weight) weightChanged,
-    required TResult Function(int age) ageChanged,
+    required TResult Function(String iconStr, int age) ageChanged,
     required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return heightChanged(height);
@@ -315,9 +316,9 @@ class _$_HeightChanged implements _HeightChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String gender)? genderChanged,
-    TResult Function(int height)? heightChanged,
+    TResult Function(double height)? heightChanged,
     TResult Function(int weight)? weightChanged,
-    TResult Function(int age)? ageChanged,
+    TResult Function(String iconStr, int age)? ageChanged,
     TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
@@ -357,9 +358,9 @@ class _$_HeightChanged implements _HeightChanged {
 }
 
 abstract class _HeightChanged implements CalculatorEvent {
-  const factory _HeightChanged(int height) = _$_HeightChanged;
+  const factory _HeightChanged(double height) = _$_HeightChanged;
 
-  int get height => throw _privateConstructorUsedError;
+  double get height => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$HeightChangedCopyWith<_HeightChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -431,9 +432,9 @@ class _$_WeightChanged implements _WeightChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String gender) genderChanged,
-    required TResult Function(int height) heightChanged,
+    required TResult Function(double height) heightChanged,
     required TResult Function(int weight) weightChanged,
-    required TResult Function(int age) ageChanged,
+    required TResult Function(String iconStr, int age) ageChanged,
     required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return weightChanged(weight);
@@ -443,9 +444,9 @@ class _$_WeightChanged implements _WeightChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String gender)? genderChanged,
-    TResult Function(int height)? heightChanged,
+    TResult Function(double height)? heightChanged,
     TResult Function(int weight)? weightChanged,
-    TResult Function(int age)? ageChanged,
+    TResult Function(String iconStr, int age)? ageChanged,
     TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
@@ -498,7 +499,7 @@ abstract class _$AgeChangedCopyWith<$Res> {
   factory _$AgeChangedCopyWith(
           _AgeChanged value, $Res Function(_AgeChanged) then) =
       __$AgeChangedCopyWithImpl<$Res>;
-  $Res call({int age});
+  $Res call({String iconStr, int age});
 }
 
 /// @nodoc
@@ -514,9 +515,14 @@ class __$AgeChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? iconStr = freezed,
     Object? age = freezed,
   }) {
     return _then(_AgeChanged(
+      iconStr == freezed
+          ? _value.iconStr
+          : iconStr // ignore: cast_nullable_to_non_nullable
+              as String,
       age == freezed
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
@@ -528,27 +534,34 @@ class __$AgeChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AgeChanged implements _AgeChanged {
-  const _$_AgeChanged(this.age);
+  const _$_AgeChanged(this.iconStr, this.age);
 
+  @override
+  final String iconStr;
   @override
   final int age;
 
   @override
   String toString() {
-    return 'CalculatorEvent.ageChanged(age: $age)';
+    return 'CalculatorEvent.ageChanged(iconStr: $iconStr, age: $age)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AgeChanged &&
+            (identical(other.iconStr, iconStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.iconStr, iconStr)) &&
             (identical(other.age, age) ||
                 const DeepCollectionEquality().equals(other.age, age)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(age);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(iconStr) ^
+      const DeepCollectionEquality().hash(age);
 
   @JsonKey(ignore: true)
   @override
@@ -559,26 +572,26 @@ class _$_AgeChanged implements _AgeChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String gender) genderChanged,
-    required TResult Function(int height) heightChanged,
+    required TResult Function(double height) heightChanged,
     required TResult Function(int weight) weightChanged,
-    required TResult Function(int age) ageChanged,
+    required TResult Function(String iconStr, int age) ageChanged,
     required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
-    return ageChanged(age);
+    return ageChanged(iconStr, age);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String gender)? genderChanged,
-    TResult Function(int height)? heightChanged,
+    TResult Function(double height)? heightChanged,
     TResult Function(int weight)? weightChanged,
-    TResult Function(int age)? ageChanged,
+    TResult Function(String iconStr, int age)? ageChanged,
     TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (ageChanged != null) {
-      return ageChanged(age);
+      return ageChanged(iconStr, age);
     }
     return orElse();
   }
@@ -613,8 +626,9 @@ class _$_AgeChanged implements _AgeChanged {
 }
 
 abstract class _AgeChanged implements CalculatorEvent {
-  const factory _AgeChanged(int age) = _$_AgeChanged;
+  const factory _AgeChanged(String iconStr, int age) = _$_AgeChanged;
 
+  String get iconStr => throw _privateConstructorUsedError;
   int get age => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$AgeChangedCopyWith<_AgeChanged> get copyWith =>
@@ -697,9 +711,9 @@ class _$_BmiButtonPressed implements _BmiButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String gender) genderChanged,
-    required TResult Function(int height) heightChanged,
+    required TResult Function(double height) heightChanged,
     required TResult Function(int weight) weightChanged,
-    required TResult Function(int age) ageChanged,
+    required TResult Function(String iconStr, int age) ageChanged,
     required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return bmiButtonPressed(calculator);
@@ -709,9 +723,9 @@ class _$_BmiButtonPressed implements _BmiButtonPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String gender)? genderChanged,
-    TResult Function(int height)? heightChanged,
+    TResult Function(double height)? heightChanged,
     TResult Function(int weight)? weightChanged,
-    TResult Function(int age)? ageChanged,
+    TResult Function(String iconStr, int age)? ageChanged,
     TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {

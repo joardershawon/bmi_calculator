@@ -5,6 +5,7 @@ import 'package:bmi_calculator/domain/calculator/bmi_function.dart';
 import 'package:bmi_calculator/domain/calculator/calculator.dart';
 import 'package:bmi_calculator/domain/calculator/value_objects.dart';
 import 'package:bmi_calculator/domain/core/value_validators.dart';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -36,6 +37,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           ),
           showResult: false,
         );
+        print(e.height);
       },
       weightChanged: (e) async* {
         yield state.copyWith(
@@ -46,12 +48,20 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
         );
       },
       ageChanged: (e) async* {
+        var age = 0;
+        if (e.iconStr == '+' && e.age < 120) {
+          age = e.age + 1;
+        } else if (e.age > 0) {
+          age = e.age - 1;
+        }
+
         yield state.copyWith(
           age: Age(
-            e.age,
+            age,
           ),
           showResult: false,
         );
+        print(age);
       },
       bmiButtonPressed: (e) async* {
         final result = BmiFunction.calculateBMI(e.calculator);

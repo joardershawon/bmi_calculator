@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+
+@immutable
 abstract class ValueObject<T> {
   const ValueObject();
   T get value;

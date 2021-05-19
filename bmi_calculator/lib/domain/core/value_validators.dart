@@ -14,7 +14,8 @@ Either<ValueFailure<String>, String> validateGender(String? gender) {
   }
 }
 
-Either<ValueFailure<int>, int> validateHeight(int height, int minHeight) {
+Either<ValueFailure<double>, double> validateHeight(
+    double height, double minHeight) {
   if (height > minHeight) {
     return right(height);
   } else {

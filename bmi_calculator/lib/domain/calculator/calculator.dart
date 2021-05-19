@@ -15,8 +15,8 @@ abstract class Calculator with _$Calculator {
 
   factory Calculator.initial() => Calculator(
         gender: Gender(enumGender.male.toString()),
-        height: Height(1),
-        age: Age(1),
-        weight: Weight(1),
+        height: Height(2),
+        age: Age(2),
+        weight: Weight(2),
       );
 }

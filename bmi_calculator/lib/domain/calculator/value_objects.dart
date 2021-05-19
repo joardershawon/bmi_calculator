@@ -1,55 +1,39 @@
 import 'package:bmi_calculator/domain/core/value_object.dart';
-import 'package:bmi_calculator/domain/core/value_validators.dart';
 
 class Gender extends ValueObject<String> {
-  @override
-  String get value => throw UnimplementedError();
-
+  final value;
   factory Gender(String? input) {
-    return Gender._(
-      validateGender(
-        input!,
-      ),
-    );
+    return Gender._(input!);
   }
-  const Gender._(value);
+  const Gender._(this.value);
 }
 
-class Height extends ValueObject<int> {
+class Height extends ValueObject<double> {
   @override
-  int get value => throw UnimplementedError();
+  final double value;
 
-  static const minHeight = 1;
-  factory Height(int input) {
+  factory Height(double input) {
     return Height._(
-      validateHeight(
-        input,
-        minHeight,
-      ),
+      input.roundToDouble(),
     );
   }
-  const Height._(value);
+  const Height._(this.value);
 }
 
 class Weight extends ValueObject<int> {
   @override
-  int get value => throw UnimplementedError();
+  final int value;
 
   static const minWeight = 20;
   factory Weight(int input) {
-    return Weight._(
-      validateWeight(
-        input,
-        minWeight,
-      ),
-    );
+    return Weight._(input);
   }
-  const Weight._(value);
+  const Weight._(this.value);
 }
 
 class Age extends ValueObject<int> {
   @override
-  int get value => throw UnimplementedError();
+  final int value;
 
   static const minAge = 10;
   factory Age(int input) {
@@ -57,5 +41,5 @@ class Age extends ValueObject<int> {
       input,
     );
   }
-  const Age._(value);
+  const Age._(this.value);
 }

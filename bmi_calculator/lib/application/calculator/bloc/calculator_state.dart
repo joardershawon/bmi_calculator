@@ -13,9 +13,9 @@ class CalculatorState with _$CalculatorState {
 
   factory CalculatorState.initial() => CalculatorState(
         gender: Gender(enumGender.male.toString()),
-        age: Age(1),
-        height: Height(1),
-        weight: Weight(1),
+        age: Age(10),
+        height: Height(50),
+        weight: Weight(50),
         showResult: false,
         result: '',
       );
