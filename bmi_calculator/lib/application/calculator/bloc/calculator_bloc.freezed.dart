@@ -40,8 +40,10 @@ class _$CalculatorEventTearOff {
     );
   }
 
-  _ButtonPressed buttonPressed() {
-    return const _ButtonPressed();
+  _BmiButtonPressed bmiButtonPressed(Calculator calculator) {
+    return _BmiButtonPressed(
+      calculator,
+    );
   }
 }
 
@@ -56,7 +58,7 @@ mixin _$CalculatorEvent {
     required TResult Function(int height) heightChanged,
     required TResult Function(int weight) weightChanged,
     required TResult Function(int age) ageChanged,
-    required TResult Function() buttonPressed,
+    required TResult Function(Calculator calculator) bmiButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,7 +67,7 @@ mixin _$CalculatorEvent {
     TResult Function(int height)? heightChanged,
     TResult Function(int weight)? weightChanged,
     TResult Function(int age)? ageChanged,
-    TResult Function()? buttonPressed,
+    TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,7 +77,7 @@ mixin _$CalculatorEvent {
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AgeChanged value) ageChanged,
-    required TResult Function(_ButtonPressed value) buttonPressed,
+    required TResult Function(_BmiButtonPressed value) bmiButtonPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -84,7 +86,7 @@ mixin _$CalculatorEvent {
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AgeChanged value)? ageChanged,
-    TResult Function(_ButtonPressed value)? buttonPressed,
+    TResult Function(_BmiButtonPressed value)? bmiButtonPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -176,7 +178,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(int height) heightChanged,
     required TResult Function(int weight) weightChanged,
     required TResult Function(int age) ageChanged,
-    required TResult Function() buttonPressed,
+    required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return genderChanged(gender);
   }
@@ -188,7 +190,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(int height)? heightChanged,
     TResult Function(int weight)? weightChanged,
     TResult Function(int age)? ageChanged,
-    TResult Function()? buttonPressed,
+    TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (genderChanged != null) {
@@ -204,7 +206,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AgeChanged value) ageChanged,
-    required TResult Function(_ButtonPressed value) buttonPressed,
+    required TResult Function(_BmiButtonPressed value) bmiButtonPressed,
   }) {
     return genderChanged(this);
   }
@@ -216,7 +218,7 @@ class _$_GenderChanged implements _GenderChanged {
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AgeChanged value)? ageChanged,
-    TResult Function(_ButtonPressed value)? buttonPressed,
+    TResult Function(_BmiButtonPressed value)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (genderChanged != null) {
@@ -304,7 +306,7 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(int height) heightChanged,
     required TResult Function(int weight) weightChanged,
     required TResult Function(int age) ageChanged,
-    required TResult Function() buttonPressed,
+    required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return heightChanged(height);
   }
@@ -316,7 +318,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(int height)? heightChanged,
     TResult Function(int weight)? weightChanged,
     TResult Function(int age)? ageChanged,
-    TResult Function()? buttonPressed,
+    TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (heightChanged != null) {
@@ -332,7 +334,7 @@ class _$_HeightChanged implements _HeightChanged {
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AgeChanged value) ageChanged,
-    required TResult Function(_ButtonPressed value) buttonPressed,
+    required TResult Function(_BmiButtonPressed value) bmiButtonPressed,
   }) {
     return heightChanged(this);
   }
@@ -344,7 +346,7 @@ class _$_HeightChanged implements _HeightChanged {
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AgeChanged value)? ageChanged,
-    TResult Function(_ButtonPressed value)? buttonPressed,
+    TResult Function(_BmiButtonPressed value)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (heightChanged != null) {
@@ -432,7 +434,7 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(int height) heightChanged,
     required TResult Function(int weight) weightChanged,
     required TResult Function(int age) ageChanged,
-    required TResult Function() buttonPressed,
+    required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return weightChanged(weight);
   }
@@ -444,7 +446,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(int height)? heightChanged,
     TResult Function(int weight)? weightChanged,
     TResult Function(int age)? ageChanged,
-    TResult Function()? buttonPressed,
+    TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (weightChanged != null) {
@@ -460,7 +462,7 @@ class _$_WeightChanged implements _WeightChanged {
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AgeChanged value) ageChanged,
-    required TResult Function(_ButtonPressed value) buttonPressed,
+    required TResult Function(_BmiButtonPressed value) bmiButtonPressed,
   }) {
     return weightChanged(this);
   }
@@ -472,7 +474,7 @@ class _$_WeightChanged implements _WeightChanged {
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AgeChanged value)? ageChanged,
-    TResult Function(_ButtonPressed value)? buttonPressed,
+    TResult Function(_BmiButtonPressed value)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (weightChanged != null) {
@@ -560,7 +562,7 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(int height) heightChanged,
     required TResult Function(int weight) weightChanged,
     required TResult Function(int age) ageChanged,
-    required TResult Function() buttonPressed,
+    required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
     return ageChanged(age);
   }
@@ -572,7 +574,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(int height)? heightChanged,
     TResult Function(int weight)? weightChanged,
     TResult Function(int age)? ageChanged,
-    TResult Function()? buttonPressed,
+    TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (ageChanged != null) {
@@ -588,7 +590,7 @@ class _$_AgeChanged implements _AgeChanged {
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AgeChanged value) ageChanged,
-    required TResult Function(_ButtonPressed value) buttonPressed,
+    required TResult Function(_BmiButtonPressed value) bmiButtonPressed,
   }) {
     return ageChanged(this);
   }
@@ -600,7 +602,7 @@ class _$_AgeChanged implements _AgeChanged {
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AgeChanged value)? ageChanged,
-    TResult Function(_ButtonPressed value)? buttonPressed,
+    TResult Function(_BmiButtonPressed value)? bmiButtonPressed,
     required TResult orElse(),
   }) {
     if (ageChanged != null) {
@@ -620,41 +622,76 @@ abstract class _AgeChanged implements CalculatorEvent {
 }
 
 /// @nodoc
-abstract class _$ButtonPressedCopyWith<$Res> {
-  factory _$ButtonPressedCopyWith(
-          _ButtonPressed value, $Res Function(_ButtonPressed) then) =
-      __$ButtonPressedCopyWithImpl<$Res>;
+abstract class _$BmiButtonPressedCopyWith<$Res> {
+  factory _$BmiButtonPressedCopyWith(
+          _BmiButtonPressed value, $Res Function(_BmiButtonPressed) then) =
+      __$BmiButtonPressedCopyWithImpl<$Res>;
+  $Res call({Calculator calculator});
+
+  $CalculatorCopyWith<$Res> get calculator;
 }
 
 /// @nodoc
-class __$ButtonPressedCopyWithImpl<$Res>
+class __$BmiButtonPressedCopyWithImpl<$Res>
     extends _$CalculatorEventCopyWithImpl<$Res>
-    implements _$ButtonPressedCopyWith<$Res> {
-  __$ButtonPressedCopyWithImpl(
-      _ButtonPressed _value, $Res Function(_ButtonPressed) _then)
-      : super(_value, (v) => _then(v as _ButtonPressed));
+    implements _$BmiButtonPressedCopyWith<$Res> {
+  __$BmiButtonPressedCopyWithImpl(
+      _BmiButtonPressed _value, $Res Function(_BmiButtonPressed) _then)
+      : super(_value, (v) => _then(v as _BmiButtonPressed));
 
   @override
-  _ButtonPressed get _value => super._value as _ButtonPressed;
+  _BmiButtonPressed get _value => super._value as _BmiButtonPressed;
+
+  @override
+  $Res call({
+    Object? calculator = freezed,
+  }) {
+    return _then(_BmiButtonPressed(
+      calculator == freezed
+          ? _value.calculator
+          : calculator // ignore: cast_nullable_to_non_nullable
+              as Calculator,
+    ));
+  }
+
+  @override
+  $CalculatorCopyWith<$Res> get calculator {
+    return $CalculatorCopyWith<$Res>(_value.calculator, (value) {
+      return _then(_value.copyWith(calculator: value));
+    });
+  }
 }
 
 /// @nodoc
 
-class _$_ButtonPressed implements _ButtonPressed {
-  const _$_ButtonPressed();
+class _$_BmiButtonPressed implements _BmiButtonPressed {
+  const _$_BmiButtonPressed(this.calculator);
+
+  @override
+  final Calculator calculator;
 
   @override
   String toString() {
-    return 'CalculatorEvent.buttonPressed()';
+    return 'CalculatorEvent.bmiButtonPressed(calculator: $calculator)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ButtonPressed);
+    return identical(this, other) ||
+        (other is _BmiButtonPressed &&
+            (identical(other.calculator, calculator) ||
+                const DeepCollectionEquality()
+                    .equals(other.calculator, calculator)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(calculator);
+
+  @JsonKey(ignore: true)
+  @override
+  _$BmiButtonPressedCopyWith<_BmiButtonPressed> get copyWith =>
+      __$BmiButtonPressedCopyWithImpl<_BmiButtonPressed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -663,9 +700,9 @@ class _$_ButtonPressed implements _ButtonPressed {
     required TResult Function(int height) heightChanged,
     required TResult Function(int weight) weightChanged,
     required TResult Function(int age) ageChanged,
-    required TResult Function() buttonPressed,
+    required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
-    return buttonPressed();
+    return bmiButtonPressed(calculator);
   }
 
   @override
@@ -675,11 +712,11 @@ class _$_ButtonPressed implements _ButtonPressed {
     TResult Function(int height)? heightChanged,
     TResult Function(int weight)? weightChanged,
     TResult Function(int age)? ageChanged,
-    TResult Function()? buttonPressed,
+    TResult Function(Calculator calculator)? bmiButtonPressed,
     required TResult orElse(),
   }) {
-    if (buttonPressed != null) {
-      return buttonPressed();
+    if (bmiButtonPressed != null) {
+      return bmiButtonPressed(calculator);
     }
     return orElse();
   }
@@ -691,9 +728,9 @@ class _$_ButtonPressed implements _ButtonPressed {
     required TResult Function(_HeightChanged value) heightChanged,
     required TResult Function(_WeightChanged value) weightChanged,
     required TResult Function(_AgeChanged value) ageChanged,
-    required TResult Function(_ButtonPressed value) buttonPressed,
+    required TResult Function(_BmiButtonPressed value) bmiButtonPressed,
   }) {
-    return buttonPressed(this);
+    return bmiButtonPressed(this);
   }
 
   @override
@@ -703,18 +740,23 @@ class _$_ButtonPressed implements _ButtonPressed {
     TResult Function(_HeightChanged value)? heightChanged,
     TResult Function(_WeightChanged value)? weightChanged,
     TResult Function(_AgeChanged value)? ageChanged,
-    TResult Function(_ButtonPressed value)? buttonPressed,
+    TResult Function(_BmiButtonPressed value)? bmiButtonPressed,
     required TResult orElse(),
   }) {
-    if (buttonPressed != null) {
-      return buttonPressed(this);
+    if (bmiButtonPressed != null) {
+      return bmiButtonPressed(this);
     }
     return orElse();
   }
 }
 
-abstract class _ButtonPressed implements CalculatorEvent {
-  const factory _ButtonPressed() = _$_ButtonPressed;
+abstract class _BmiButtonPressed implements CalculatorEvent {
+  const factory _BmiButtonPressed(Calculator calculator) = _$_BmiButtonPressed;
+
+  Calculator get calculator => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$BmiButtonPressedCopyWith<_BmiButtonPressed> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -722,12 +764,19 @@ class _$CalculatorStateTearOff {
   const _$CalculatorStateTearOff();
 
   _CalculatorState call(
-      {Gender? gender, Height? height, Weight? weight, Age? age}) {
+      {Gender? gender,
+      Height? height,
+      Weight? weight,
+      Age? age,
+      bool? showResult,
+      String? result}) {
     return _CalculatorState(
       gender: gender,
       height: height,
       weight: weight,
       age: age,
+      showResult: showResult,
+      result: result,
     );
   }
 }
@@ -741,6 +790,8 @@ mixin _$CalculatorState {
   Height? get height => throw _privateConstructorUsedError;
   Weight? get weight => throw _privateConstructorUsedError;
   Age? get age => throw _privateConstructorUsedError;
+  bool? get showResult => throw _privateConstructorUsedError;
+  String? get result => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CalculatorStateCopyWith<CalculatorState> get copyWith =>
@@ -752,7 +803,13 @@ abstract class $CalculatorStateCopyWith<$Res> {
   factory $CalculatorStateCopyWith(
           CalculatorState value, $Res Function(CalculatorState) then) =
       _$CalculatorStateCopyWithImpl<$Res>;
-  $Res call({Gender? gender, Height? height, Weight? weight, Age? age});
+  $Res call(
+      {Gender? gender,
+      Height? height,
+      Weight? weight,
+      Age? age,
+      bool? showResult,
+      String? result});
 }
 
 /// @nodoc
@@ -770,6 +827,8 @@ class _$CalculatorStateCopyWithImpl<$Res>
     Object? height = freezed,
     Object? weight = freezed,
     Object? age = freezed,
+    Object? showResult = freezed,
+    Object? result = freezed,
   }) {
     return _then(_value.copyWith(
       gender: gender == freezed
@@ -788,6 +847,14 @@ class _$CalculatorStateCopyWithImpl<$Res>
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
               as Age?,
+      showResult: showResult == freezed
+          ? _value.showResult
+          : showResult // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -799,7 +866,13 @@ abstract class _$CalculatorStateCopyWith<$Res>
           _CalculatorState value, $Res Function(_CalculatorState) then) =
       __$CalculatorStateCopyWithImpl<$Res>;
   @override
-  $Res call({Gender? gender, Height? height, Weight? weight, Age? age});
+  $Res call(
+      {Gender? gender,
+      Height? height,
+      Weight? weight,
+      Age? age,
+      bool? showResult,
+      String? result});
 }
 
 /// @nodoc
@@ -819,6 +892,8 @@ class __$CalculatorStateCopyWithImpl<$Res>
     Object? height = freezed,
     Object? weight = freezed,
     Object? age = freezed,
+    Object? showResult = freezed,
+    Object? result = freezed,
   }) {
     return _then(_CalculatorState(
       gender: gender == freezed
@@ -837,6 +912,14 @@ class __$CalculatorStateCopyWithImpl<$Res>
           ? _value.age
           : age // ignore: cast_nullable_to_non_nullable
               as Age?,
+      showResult: showResult == freezed
+          ? _value.showResult
+          : showResult // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      result: result == freezed
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -844,7 +927,13 @@ class __$CalculatorStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CalculatorState implements _CalculatorState {
-  const _$_CalculatorState({this.gender, this.height, this.weight, this.age});
+  const _$_CalculatorState(
+      {this.gender,
+      this.height,
+      this.weight,
+      this.age,
+      this.showResult,
+      this.result});
 
   @override
   final Gender? gender;
@@ -854,10 +943,14 @@ class _$_CalculatorState implements _CalculatorState {
   final Weight? weight;
   @override
   final Age? age;
+  @override
+  final bool? showResult;
+  @override
+  final String? result;
 
   @override
   String toString() {
-    return 'CalculatorState(gender: $gender, height: $height, weight: $weight, age: $age)';
+    return 'CalculatorState(gender: $gender, height: $height, weight: $weight, age: $age, showResult: $showResult, result: $result)';
   }
 
   @override
@@ -871,7 +964,12 @@ class _$_CalculatorState implements _CalculatorState {
             (identical(other.weight, weight) ||
                 const DeepCollectionEquality().equals(other.weight, weight)) &&
             (identical(other.age, age) ||
-                const DeepCollectionEquality().equals(other.age, age)));
+                const DeepCollectionEquality().equals(other.age, age)) &&
+            (identical(other.showResult, showResult) ||
+                const DeepCollectionEquality()
+                    .equals(other.showResult, showResult)) &&
+            (identical(other.result, result) ||
+                const DeepCollectionEquality().equals(other.result, result)));
   }
 
   @override
@@ -880,7 +978,9 @@ class _$_CalculatorState implements _CalculatorState {
       const DeepCollectionEquality().hash(gender) ^
       const DeepCollectionEquality().hash(height) ^
       const DeepCollectionEquality().hash(weight) ^
-      const DeepCollectionEquality().hash(age);
+      const DeepCollectionEquality().hash(age) ^
+      const DeepCollectionEquality().hash(showResult) ^
+      const DeepCollectionEquality().hash(result);
 
   @JsonKey(ignore: true)
   @override
@@ -893,7 +993,9 @@ abstract class _CalculatorState implements CalculatorState {
       {Gender? gender,
       Height? height,
       Weight? weight,
-      Age? age}) = _$_CalculatorState;
+      Age? age,
+      bool? showResult,
+      String? result}) = _$_CalculatorState;
 
   @override
   Gender? get gender => throw _privateConstructorUsedError;
@@ -903,6 +1005,10 @@ abstract class _CalculatorState implements CalculatorState {
   Weight? get weight => throw _privateConstructorUsedError;
   @override
   Age? get age => throw _privateConstructorUsedError;
+  @override
+  bool? get showResult => throw _privateConstructorUsedError;
+  @override
+  String? get result => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CalculatorStateCopyWith<_CalculatorState> get copyWith =>

@@ -6,5 +6,6 @@ class CalculatorEvent with _$CalculatorEvent {
   const factory CalculatorEvent.heightChanged(int height) = _HeightChanged;
   const factory CalculatorEvent.weightChanged(int weight) = _WeightChanged;
   const factory CalculatorEvent.ageChanged(int age) = _AgeChanged;
-  const factory CalculatorEvent.buttonPressed() = _ButtonPressed;
+  const factory CalculatorEvent.bmiButtonPressed(Calculator calculator) =
+      _BmiButtonPressed;
 }

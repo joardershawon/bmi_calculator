@@ -1,4 +1,5 @@
 import 'package:bmi_calculator/domain/calculator/value_objects.dart';
+import 'package:bmi_calculator/domain/core/value_validators.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'calculator.freezed.dart';
 
@@ -13,7 +14,7 @@ abstract class Calculator with _$Calculator {
   }) = _Calculator;
 
   factory Calculator.initial() => Calculator(
-        gender: Gender(''),
+        gender: Gender(enumGender.male.toString()),
         height: Height(1),
         age: Age(1),
         weight: Weight(1),

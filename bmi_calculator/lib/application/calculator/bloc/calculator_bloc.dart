@@ -1,13 +1,18 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bmi_calculator/domain/calculator/bmi_function.dart';
+import 'package:bmi_calculator/domain/calculator/calculator.dart';
 import 'package:bmi_calculator/domain/calculator/value_objects.dart';
+import 'package:bmi_calculator/domain/core/value_validators.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'calculator_event.dart';
 part 'calculator_state.dart';
 part 'calculator_bloc.freezed.dart';
 
+@injectable
 class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   CalculatorBloc() : super(CalculatorState.initial());
 
@@ -21,6 +26,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           gender: Gender(
             e.gender,
           ),
+          showResult: false,
         );
       },
       heightChanged: (e) async* {
@@ -28,6 +34,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           height: Height(
             e.height,
           ),
+          showResult: false,
         );
       },
       weightChanged: (e) async* {
@@ -35,6 +42,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           weight: Weight(
             e.weight,
           ),
+          showResult: false,
         );
       },
       ageChanged: (e) async* {
@@ -42,9 +50,17 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           age: Age(
             e.age,
           ),
+          showResult: false,
         );
       },
-      buttonPressed: (e) async* {},
+      bmiButtonPressed: (e) async* {
+        final result = BmiFunction.calculateBMI(e.calculator);
+        final resultStr = BmiFunction.getResult(result);
+        yield state.copyWith(
+          result: resultStr,
+          showResult: true,
+        );
+      },
     );
   }
 }

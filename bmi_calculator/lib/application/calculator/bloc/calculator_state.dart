@@ -7,12 +7,16 @@ class CalculatorState with _$CalculatorState {
     @required Height? height,
     @required Weight? weight,
     @required Age? age,
+    @required bool? showResult,
+    @required String? result,
   }) = _CalculatorState;
 
   factory CalculatorState.initial() => CalculatorState(
+        gender: Gender(enumGender.male.toString()),
         age: Age(1),
-        gender: Gender('male'),
         height: Height(1),
         weight: Weight(1),
+        showResult: false,
+        result: '',
       );
 }
