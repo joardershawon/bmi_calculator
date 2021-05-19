@@ -4,9 +4,9 @@ class CalculatorPage extends StatelessWidget {
   const CalculatorPage({
     Key? key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Column(
       children: [
         Container(
@@ -31,6 +31,9 @@ class CalculatorPage extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
+              SizedBox(
+                width: size.width * .02,
               ),
               Expanded(
                 child: Container(

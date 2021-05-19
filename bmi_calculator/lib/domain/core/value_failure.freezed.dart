@@ -16,15 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
-  InvalidValue<T> invalidValue<T>({T? failedValue}) {
+  InvalidValue<T> invalidValue<T>({T? fvalue}) {
     return InvalidValue<T>(
-      failedValue: failedValue,
-    );
-  }
-
-  RangeExceed<T> rangeExceed<T>({T? failedValue}) {
-    return RangeExceed<T>(
-      failedValue: failedValue,
+      fvalue: fvalue,
     );
   }
 }
@@ -34,31 +28,27 @@ const $ValueFailure = _$ValueFailureTearOff();
 
 /// @nodoc
 mixin _$ValueFailure<T> {
-  T? get failedValue => throw _privateConstructorUsedError;
+  T? get fvalue => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T? failedValue) invalidValue,
-    required TResult Function(T? failedValue) rangeExceed,
+    required TResult Function(T? fvalue) invalidValue,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T? failedValue)? invalidValue,
-    TResult Function(T? failedValue)? rangeExceed,
+    TResult Function(T? fvalue)? invalidValue,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidValue<T> value) invalidValue,
-    required TResult Function(RangeExceed<T> value) rangeExceed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidValue<T> value)? invalidValue,
-    TResult Function(RangeExceed<T> value)? rangeExceed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,7 +63,7 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
       _$ValueFailureCopyWithImpl<T, $Res>;
-  $Res call({T? failedValue});
+  $Res call({T? fvalue});
 }
 
 /// @nodoc
@@ -87,12 +77,12 @@ class _$ValueFailureCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? fvalue = freezed,
   }) {
     return _then(_value.copyWith(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
+      fvalue: fvalue == freezed
+          ? _value.fvalue
+          : fvalue // ignore: cast_nullable_to_non_nullable
               as T?,
     ));
   }
@@ -105,7 +95,7 @@ abstract class $InvalidValueCopyWith<T, $Res>
           InvalidValue<T> value, $Res Function(InvalidValue<T>) then) =
       _$InvalidValueCopyWithImpl<T, $Res>;
   @override
-  $Res call({T? failedValue});
+  $Res call({T? fvalue});
 }
 
 /// @nodoc
@@ -121,12 +111,12 @@ class _$InvalidValueCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object? failedValue = freezed,
+    Object? fvalue = freezed,
   }) {
     return _then(InvalidValue<T>(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
+      fvalue: fvalue == freezed
+          ? _value.fvalue
+          : fvalue // ignore: cast_nullable_to_non_nullable
               as T?,
     ));
   }
@@ -135,28 +125,27 @@ class _$InvalidValueCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$InvalidValue<T> implements InvalidValue<T> {
-  const _$InvalidValue({this.failedValue});
+  const _$InvalidValue({this.fvalue});
 
   @override
-  final T? failedValue;
+  final T? fvalue;
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.invalidValue(failedValue: $failedValue)';
+    return 'ValueFailure<$T>.invalidValue(fvalue: $fvalue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is InvalidValue<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+            (identical(other.fvalue, fvalue) ||
+                const DeepCollectionEquality().equals(other.fvalue, fvalue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(fvalue);
 
   @JsonKey(ignore: true)
   @override
@@ -166,21 +155,19 @@ class _$InvalidValue<T> implements InvalidValue<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(T? failedValue) invalidValue,
-    required TResult Function(T? failedValue) rangeExceed,
+    required TResult Function(T? fvalue) invalidValue,
   }) {
-    return invalidValue(failedValue);
+    return invalidValue(fvalue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T? failedValue)? invalidValue,
-    TResult Function(T? failedValue)? rangeExceed,
+    TResult Function(T? fvalue)? invalidValue,
     required TResult orElse(),
   }) {
     if (invalidValue != null) {
-      return invalidValue(failedValue);
+      return invalidValue(fvalue);
     }
     return orElse();
   }
@@ -189,7 +176,6 @@ class _$InvalidValue<T> implements InvalidValue<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InvalidValue<T> value) invalidValue,
-    required TResult Function(RangeExceed<T> value) rangeExceed,
   }) {
     return invalidValue(this);
   }
@@ -198,7 +184,6 @@ class _$InvalidValue<T> implements InvalidValue<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InvalidValue<T> value)? invalidValue,
-    TResult Function(RangeExceed<T> value)? rangeExceed,
     required TResult orElse(),
   }) {
     if (invalidValue != null) {
@@ -209,133 +194,12 @@ class _$InvalidValue<T> implements InvalidValue<T> {
 }
 
 abstract class InvalidValue<T> implements ValueFailure<T> {
-  const factory InvalidValue({T? failedValue}) = _$InvalidValue<T>;
+  const factory InvalidValue({T? fvalue}) = _$InvalidValue<T>;
 
   @override
-  T? get failedValue => throw _privateConstructorUsedError;
+  T? get fvalue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $InvalidValueCopyWith<T, InvalidValue<T>> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RangeExceedCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
-  factory $RangeExceedCopyWith(
-          RangeExceed<T> value, $Res Function(RangeExceed<T>) then) =
-      _$RangeExceedCopyWithImpl<T, $Res>;
-  @override
-  $Res call({T? failedValue});
-}
-
-/// @nodoc
-class _$RangeExceedCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $RangeExceedCopyWith<T, $Res> {
-  _$RangeExceedCopyWithImpl(
-      RangeExceed<T> _value, $Res Function(RangeExceed<T>) _then)
-      : super(_value, (v) => _then(v as RangeExceed<T>));
-
-  @override
-  RangeExceed<T> get _value => super._value as RangeExceed<T>;
-
-  @override
-  $Res call({
-    Object? failedValue = freezed,
-  }) {
-    return _then(RangeExceed<T>(
-      failedValue: failedValue == freezed
-          ? _value.failedValue
-          : failedValue // ignore: cast_nullable_to_non_nullable
-              as T?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$RangeExceed<T> implements RangeExceed<T> {
-  const _$RangeExceed({this.failedValue});
-
-  @override
-  final T? failedValue;
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.rangeExceed(failedValue: $failedValue)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is RangeExceed<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-
-  @JsonKey(ignore: true)
-  @override
-  $RangeExceedCopyWith<T, RangeExceed<T>> get copyWith =>
-      _$RangeExceedCopyWithImpl<T, RangeExceed<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(T? failedValue) invalidValue,
-    required TResult Function(T? failedValue) rangeExceed,
-  }) {
-    return rangeExceed(failedValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(T? failedValue)? invalidValue,
-    TResult Function(T? failedValue)? rangeExceed,
-    required TResult orElse(),
-  }) {
-    if (rangeExceed != null) {
-      return rangeExceed(failedValue);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(InvalidValue<T> value) invalidValue,
-    required TResult Function(RangeExceed<T> value) rangeExceed,
-  }) {
-    return rangeExceed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InvalidValue<T> value)? invalidValue,
-    TResult Function(RangeExceed<T> value)? rangeExceed,
-    required TResult orElse(),
-  }) {
-    if (rangeExceed != null) {
-      return rangeExceed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class RangeExceed<T> implements ValueFailure<T> {
-  const factory RangeExceed({T? failedValue}) = _$RangeExceed<T>;
-
-  @override
-  T? get failedValue => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  $RangeExceedCopyWith<T, RangeExceed<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

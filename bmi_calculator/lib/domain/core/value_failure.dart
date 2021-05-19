@@ -3,11 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'value_failure.freezed.dart';
 
 @freezed
-abstract class ValueFailure<T> {
+abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidValue({
-    @required T? failedValue,
+    @required T? fvalue,
   }) = InvalidValue<T>;
-  const factory ValueFailure.rangeExceed({
-    @required T? failedValue,
-  }) = RangeExceed<T>;
 }

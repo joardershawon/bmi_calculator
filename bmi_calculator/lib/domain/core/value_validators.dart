@@ -10,7 +10,7 @@ Either<ValueFailure<String>, String> validateGender(String? gender) {
   if (enumGender.male == gender || gender == enumGender.female) {
     return right(gender!);
   } else {
-    return left(ValueFailure.invalidValue(failedValue: gender));
+    return left(ValueFailure.invalidValue(fvalue: gender!));
   }
 }
 
@@ -19,7 +19,7 @@ Either<ValueFailure<int>, int> validateHeight(int height, int minHeight) {
     return right(height);
   } else {
     return left(
-      ValueFailure.invalidValue(failedValue: height),
+      ValueFailure.invalidValue(fvalue: height),
     );
   }
 }
@@ -29,7 +29,7 @@ Either<ValueFailure<int>, int> validateWeight(int weight, int minWeight) {
     return right(weight);
   } else {
     return left(
-      ValueFailure.invalidValue(failedValue: weight),
+      ValueFailure.invalidValue(fvalue: weight),
     );
   }
 }
