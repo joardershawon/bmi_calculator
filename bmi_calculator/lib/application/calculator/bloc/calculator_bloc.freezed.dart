@@ -16,12 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CalculatorEventTearOff {
   const _$CalculatorEventTearOff();
 
-  _GenderChanged genderChanged(
-      {String? gender, bool? maleColor, bool? femaleColor}) {
+  _GenderChanged genderChanged({String? gender, bool? color}) {
     return _GenderChanged(
       gender: gender,
-      maleColor: maleColor,
-      femaleColor: femaleColor,
+      color: color,
     );
   }
 
@@ -59,9 +57,7 @@ const $CalculatorEvent = _$CalculatorEventTearOff();
 mixin _$CalculatorEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? gender, bool? maleColor, bool? femaleColor)
-        genderChanged,
+    required TResult Function(String? gender, bool? color) genderChanged,
     required TResult Function(double height) heightChanged,
     required TResult Function(String iconStr, int weight) weightChanged,
     required TResult Function(String iconStr, int age) ageChanged,
@@ -70,8 +66,7 @@ mixin _$CalculatorEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, bool? maleColor, bool? femaleColor)?
-        genderChanged,
+    TResult Function(String? gender, bool? color)? genderChanged,
     TResult Function(double height)? heightChanged,
     TResult Function(String iconStr, int weight)? weightChanged,
     TResult Function(String iconStr, int age)? ageChanged,
@@ -122,7 +117,7 @@ abstract class _$GenderChangedCopyWith<$Res> {
   factory _$GenderChangedCopyWith(
           _GenderChanged value, $Res Function(_GenderChanged) then) =
       __$GenderChangedCopyWithImpl<$Res>;
-  $Res call({String? gender, bool? maleColor, bool? femaleColor});
+  $Res call({String? gender, bool? color});
 }
 
 /// @nodoc
@@ -139,21 +134,16 @@ class __$GenderChangedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? gender = freezed,
-    Object? maleColor = freezed,
-    Object? femaleColor = freezed,
+    Object? color = freezed,
   }) {
     return _then(_GenderChanged(
       gender: gender == freezed
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as String?,
-      maleColor: maleColor == freezed
-          ? _value.maleColor
-          : maleColor // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      femaleColor: femaleColor == freezed
-          ? _value.femaleColor
-          : femaleColor // ignore: cast_nullable_to_non_nullable
+      color: color == freezed
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
   }
@@ -162,18 +152,16 @@ class __$GenderChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GenderChanged implements _GenderChanged {
-  const _$_GenderChanged({this.gender, this.maleColor, this.femaleColor});
+  const _$_GenderChanged({this.gender, this.color});
 
   @override
   final String? gender;
   @override
-  final bool? maleColor;
-  @override
-  final bool? femaleColor;
+  final bool? color;
 
   @override
   String toString() {
-    return 'CalculatorEvent.genderChanged(gender: $gender, maleColor: $maleColor, femaleColor: $femaleColor)';
+    return 'CalculatorEvent.genderChanged(gender: $gender, color: $color)';
   }
 
   @override
@@ -182,20 +170,15 @@ class _$_GenderChanged implements _GenderChanged {
         (other is _GenderChanged &&
             (identical(other.gender, gender) ||
                 const DeepCollectionEquality().equals(other.gender, gender)) &&
-            (identical(other.maleColor, maleColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.maleColor, maleColor)) &&
-            (identical(other.femaleColor, femaleColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.femaleColor, femaleColor)));
+            (identical(other.color, color) ||
+                const DeepCollectionEquality().equals(other.color, color)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(gender) ^
-      const DeepCollectionEquality().hash(maleColor) ^
-      const DeepCollectionEquality().hash(femaleColor);
+      const DeepCollectionEquality().hash(color);
 
   @JsonKey(ignore: true)
   @override
@@ -205,22 +188,19 @@ class _$_GenderChanged implements _GenderChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? gender, bool? maleColor, bool? femaleColor)
-        genderChanged,
+    required TResult Function(String? gender, bool? color) genderChanged,
     required TResult Function(double height) heightChanged,
     required TResult Function(String iconStr, int weight) weightChanged,
     required TResult Function(String iconStr, int age) ageChanged,
     required TResult Function(Calculator calculator) bmiButtonPressed,
   }) {
-    return genderChanged(gender, maleColor, femaleColor);
+    return genderChanged(gender, color);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, bool? maleColor, bool? femaleColor)?
-        genderChanged,
+    TResult Function(String? gender, bool? color)? genderChanged,
     TResult Function(double height)? heightChanged,
     TResult Function(String iconStr, int weight)? weightChanged,
     TResult Function(String iconStr, int age)? ageChanged,
@@ -228,7 +208,7 @@ class _$_GenderChanged implements _GenderChanged {
     required TResult orElse(),
   }) {
     if (genderChanged != null) {
-      return genderChanged(gender, maleColor, femaleColor);
+      return genderChanged(gender, color);
     }
     return orElse();
   }
@@ -263,12 +243,11 @@ class _$_GenderChanged implements _GenderChanged {
 }
 
 abstract class _GenderChanged implements CalculatorEvent {
-  const factory _GenderChanged(
-      {String? gender, bool? maleColor, bool? femaleColor}) = _$_GenderChanged;
+  const factory _GenderChanged({String? gender, bool? color}) =
+      _$_GenderChanged;
 
   String? get gender => throw _privateConstructorUsedError;
-  bool? get maleColor => throw _privateConstructorUsedError;
-  bool? get femaleColor => throw _privateConstructorUsedError;
+  bool? get color => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$GenderChangedCopyWith<_GenderChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -339,9 +318,7 @@ class _$_HeightChanged implements _HeightChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? gender, bool? maleColor, bool? femaleColor)
-        genderChanged,
+    required TResult Function(String? gender, bool? color) genderChanged,
     required TResult Function(double height) heightChanged,
     required TResult Function(String iconStr, int weight) weightChanged,
     required TResult Function(String iconStr, int age) ageChanged,
@@ -353,8 +330,7 @@ class _$_HeightChanged implements _HeightChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, bool? maleColor, bool? femaleColor)?
-        genderChanged,
+    TResult Function(String? gender, bool? color)? genderChanged,
     TResult Function(double height)? heightChanged,
     TResult Function(String iconStr, int weight)? weightChanged,
     TResult Function(String iconStr, int age)? ageChanged,
@@ -482,9 +458,7 @@ class _$_WeightChanged implements _WeightChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? gender, bool? maleColor, bool? femaleColor)
-        genderChanged,
+    required TResult Function(String? gender, bool? color) genderChanged,
     required TResult Function(double height) heightChanged,
     required TResult Function(String iconStr, int weight) weightChanged,
     required TResult Function(String iconStr, int age) ageChanged,
@@ -496,8 +470,7 @@ class _$_WeightChanged implements _WeightChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, bool? maleColor, bool? femaleColor)?
-        genderChanged,
+    TResult Function(String? gender, bool? color)? genderChanged,
     TResult Function(double height)? heightChanged,
     TResult Function(String iconStr, int weight)? weightChanged,
     TResult Function(String iconStr, int age)? ageChanged,
@@ -626,9 +599,7 @@ class _$_AgeChanged implements _AgeChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? gender, bool? maleColor, bool? femaleColor)
-        genderChanged,
+    required TResult Function(String? gender, bool? color) genderChanged,
     required TResult Function(double height) heightChanged,
     required TResult Function(String iconStr, int weight) weightChanged,
     required TResult Function(String iconStr, int age) ageChanged,
@@ -640,8 +611,7 @@ class _$_AgeChanged implements _AgeChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, bool? maleColor, bool? femaleColor)?
-        genderChanged,
+    TResult Function(String? gender, bool? color)? genderChanged,
     TResult Function(double height)? heightChanged,
     TResult Function(String iconStr, int weight)? weightChanged,
     TResult Function(String iconStr, int age)? ageChanged,
@@ -768,9 +738,7 @@ class _$_BmiButtonPressed implements _BmiButtonPressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(
-            String? gender, bool? maleColor, bool? femaleColor)
-        genderChanged,
+    required TResult Function(String? gender, bool? color) genderChanged,
     required TResult Function(double height) heightChanged,
     required TResult Function(String iconStr, int weight) weightChanged,
     required TResult Function(String iconStr, int age) ageChanged,
@@ -782,8 +750,7 @@ class _$_BmiButtonPressed implements _BmiButtonPressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? gender, bool? maleColor, bool? femaleColor)?
-        genderChanged,
+    TResult Function(String? gender, bool? color)? genderChanged,
     TResult Function(double height)? heightChanged,
     TResult Function(String iconStr, int weight)? weightChanged,
     TResult Function(String iconStr, int age)? ageChanged,
@@ -844,8 +811,7 @@ class _$CalculatorStateTearOff {
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? maleColor,
-      bool? femaleColor,
+      bool? boxColor,
       String? result}) {
     return _CalculatorState(
       gender: gender,
@@ -853,8 +819,7 @@ class _$CalculatorStateTearOff {
       weight: weight,
       age: age,
       showResult: showResult,
-      maleColor: maleColor,
-      femaleColor: femaleColor,
+      boxColor: boxColor,
       result: result,
     );
   }
@@ -870,8 +835,7 @@ mixin _$CalculatorState {
   Weight? get weight => throw _privateConstructorUsedError;
   Age? get age => throw _privateConstructorUsedError;
   bool? get showResult => throw _privateConstructorUsedError;
-  bool? get maleColor => throw _privateConstructorUsedError;
-  bool? get femaleColor => throw _privateConstructorUsedError;
+  bool? get boxColor => throw _privateConstructorUsedError;
   String? get result => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -890,8 +854,7 @@ abstract class $CalculatorStateCopyWith<$Res> {
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? maleColor,
-      bool? femaleColor,
+      bool? boxColor,
       String? result});
 }
 
@@ -911,8 +874,7 @@ class _$CalculatorStateCopyWithImpl<$Res>
     Object? weight = freezed,
     Object? age = freezed,
     Object? showResult = freezed,
-    Object? maleColor = freezed,
-    Object? femaleColor = freezed,
+    Object? boxColor = freezed,
     Object? result = freezed,
   }) {
     return _then(_value.copyWith(
@@ -936,13 +898,9 @@ class _$CalculatorStateCopyWithImpl<$Res>
           ? _value.showResult
           : showResult // ignore: cast_nullable_to_non_nullable
               as bool?,
-      maleColor: maleColor == freezed
-          ? _value.maleColor
-          : maleColor // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      femaleColor: femaleColor == freezed
-          ? _value.femaleColor
-          : femaleColor // ignore: cast_nullable_to_non_nullable
+      boxColor: boxColor == freezed
+          ? _value.boxColor
+          : boxColor // ignore: cast_nullable_to_non_nullable
               as bool?,
       result: result == freezed
           ? _value.result
@@ -965,8 +923,7 @@ abstract class _$CalculatorStateCopyWith<$Res>
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? maleColor,
-      bool? femaleColor,
+      bool? boxColor,
       String? result});
 }
 
@@ -988,8 +945,7 @@ class __$CalculatorStateCopyWithImpl<$Res>
     Object? weight = freezed,
     Object? age = freezed,
     Object? showResult = freezed,
-    Object? maleColor = freezed,
-    Object? femaleColor = freezed,
+    Object? boxColor = freezed,
     Object? result = freezed,
   }) {
     return _then(_CalculatorState(
@@ -1013,13 +969,9 @@ class __$CalculatorStateCopyWithImpl<$Res>
           ? _value.showResult
           : showResult // ignore: cast_nullable_to_non_nullable
               as bool?,
-      maleColor: maleColor == freezed
-          ? _value.maleColor
-          : maleColor // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      femaleColor: femaleColor == freezed
-          ? _value.femaleColor
-          : femaleColor // ignore: cast_nullable_to_non_nullable
+      boxColor: boxColor == freezed
+          ? _value.boxColor
+          : boxColor // ignore: cast_nullable_to_non_nullable
               as bool?,
       result: result == freezed
           ? _value.result
@@ -1038,8 +990,7 @@ class _$_CalculatorState implements _CalculatorState {
       this.weight,
       this.age,
       this.showResult,
-      this.maleColor,
-      this.femaleColor,
+      this.boxColor,
       this.result});
 
   @override
@@ -1053,15 +1004,13 @@ class _$_CalculatorState implements _CalculatorState {
   @override
   final bool? showResult;
   @override
-  final bool? maleColor;
-  @override
-  final bool? femaleColor;
+  final bool? boxColor;
   @override
   final String? result;
 
   @override
   String toString() {
-    return 'CalculatorState(gender: $gender, height: $height, weight: $weight, age: $age, showResult: $showResult, maleColor: $maleColor, femaleColor: $femaleColor, result: $result)';
+    return 'CalculatorState(gender: $gender, height: $height, weight: $weight, age: $age, showResult: $showResult, boxColor: $boxColor, result: $result)';
   }
 
   @override
@@ -1079,12 +1028,9 @@ class _$_CalculatorState implements _CalculatorState {
             (identical(other.showResult, showResult) ||
                 const DeepCollectionEquality()
                     .equals(other.showResult, showResult)) &&
-            (identical(other.maleColor, maleColor) ||
+            (identical(other.boxColor, boxColor) ||
                 const DeepCollectionEquality()
-                    .equals(other.maleColor, maleColor)) &&
-            (identical(other.femaleColor, femaleColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.femaleColor, femaleColor)) &&
+                    .equals(other.boxColor, boxColor)) &&
             (identical(other.result, result) ||
                 const DeepCollectionEquality().equals(other.result, result)));
   }
@@ -1097,8 +1043,7 @@ class _$_CalculatorState implements _CalculatorState {
       const DeepCollectionEquality().hash(weight) ^
       const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(showResult) ^
-      const DeepCollectionEquality().hash(maleColor) ^
-      const DeepCollectionEquality().hash(femaleColor) ^
+      const DeepCollectionEquality().hash(boxColor) ^
       const DeepCollectionEquality().hash(result);
 
   @JsonKey(ignore: true)
@@ -1114,8 +1059,7 @@ abstract class _CalculatorState implements CalculatorState {
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? maleColor,
-      bool? femaleColor,
+      bool? boxColor,
       String? result}) = _$_CalculatorState;
 
   @override
@@ -1129,9 +1073,7 @@ abstract class _CalculatorState implements CalculatorState {
   @override
   bool? get showResult => throw _privateConstructorUsedError;
   @override
-  bool? get maleColor => throw _privateConstructorUsedError;
-  @override
-  bool? get femaleColor => throw _privateConstructorUsedError;
+  bool? get boxColor => throw _privateConstructorUsedError;
   @override
   String? get result => throw _privateConstructorUsedError;
   @override

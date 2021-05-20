@@ -37,12 +37,11 @@ class CalculatorPage extends StatelessWidget {
                         BlocProvider.of<CalculatorBloc>(context).add(
                           const CalculatorEvent.genderChanged(
                             gender: 'male',
-                            maleColor: true,
-                            femaleColor: false,
+                            color: true,
                           ),
                         );
                       },
-                      colour: state.maleColor!
+                      colour: state.boxColor!
                           ? kInactiveCardColour
                           : kActiveCardColour,
                       cardChild: IconContent(
@@ -57,12 +56,11 @@ class CalculatorPage extends StatelessWidget {
                         BlocProvider.of<CalculatorBloc>(context).add(
                           const CalculatorEvent.genderChanged(
                             gender: 'female',
-                            maleColor: false,
-                            femaleColor: true,
+                            color: false,
                           ),
                         );
                       },
-                      colour: state.femaleColor!
+                      colour: !state.boxColor!
                           ? kInactiveCardColour
                           : kActiveCardColour,
                       cardChild: IconContent(
