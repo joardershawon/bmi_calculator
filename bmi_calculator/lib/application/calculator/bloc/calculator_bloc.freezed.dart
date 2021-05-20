@@ -844,7 +844,8 @@ class _$CalculatorStateTearOff {
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? changeColor,
+      bool? maleColor,
+      bool? femaleColor,
       String? result}) {
     return _CalculatorState(
       gender: gender,
@@ -852,7 +853,8 @@ class _$CalculatorStateTearOff {
       weight: weight,
       age: age,
       showResult: showResult,
-      changeColor: changeColor,
+      maleColor: maleColor,
+      femaleColor: femaleColor,
       result: result,
     );
   }
@@ -868,7 +870,8 @@ mixin _$CalculatorState {
   Weight? get weight => throw _privateConstructorUsedError;
   Age? get age => throw _privateConstructorUsedError;
   bool? get showResult => throw _privateConstructorUsedError;
-  bool? get changeColor => throw _privateConstructorUsedError;
+  bool? get maleColor => throw _privateConstructorUsedError;
+  bool? get femaleColor => throw _privateConstructorUsedError;
   String? get result => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -887,7 +890,8 @@ abstract class $CalculatorStateCopyWith<$Res> {
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? changeColor,
+      bool? maleColor,
+      bool? femaleColor,
       String? result});
 }
 
@@ -907,7 +911,8 @@ class _$CalculatorStateCopyWithImpl<$Res>
     Object? weight = freezed,
     Object? age = freezed,
     Object? showResult = freezed,
-    Object? changeColor = freezed,
+    Object? maleColor = freezed,
+    Object? femaleColor = freezed,
     Object? result = freezed,
   }) {
     return _then(_value.copyWith(
@@ -931,9 +936,13 @@ class _$CalculatorStateCopyWithImpl<$Res>
           ? _value.showResult
           : showResult // ignore: cast_nullable_to_non_nullable
               as bool?,
-      changeColor: changeColor == freezed
-          ? _value.changeColor
-          : changeColor // ignore: cast_nullable_to_non_nullable
+      maleColor: maleColor == freezed
+          ? _value.maleColor
+          : maleColor // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      femaleColor: femaleColor == freezed
+          ? _value.femaleColor
+          : femaleColor // ignore: cast_nullable_to_non_nullable
               as bool?,
       result: result == freezed
           ? _value.result
@@ -956,7 +965,8 @@ abstract class _$CalculatorStateCopyWith<$Res>
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? changeColor,
+      bool? maleColor,
+      bool? femaleColor,
       String? result});
 }
 
@@ -978,7 +988,8 @@ class __$CalculatorStateCopyWithImpl<$Res>
     Object? weight = freezed,
     Object? age = freezed,
     Object? showResult = freezed,
-    Object? changeColor = freezed,
+    Object? maleColor = freezed,
+    Object? femaleColor = freezed,
     Object? result = freezed,
   }) {
     return _then(_CalculatorState(
@@ -1002,9 +1013,13 @@ class __$CalculatorStateCopyWithImpl<$Res>
           ? _value.showResult
           : showResult // ignore: cast_nullable_to_non_nullable
               as bool?,
-      changeColor: changeColor == freezed
-          ? _value.changeColor
-          : changeColor // ignore: cast_nullable_to_non_nullable
+      maleColor: maleColor == freezed
+          ? _value.maleColor
+          : maleColor // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      femaleColor: femaleColor == freezed
+          ? _value.femaleColor
+          : femaleColor // ignore: cast_nullable_to_non_nullable
               as bool?,
       result: result == freezed
           ? _value.result
@@ -1023,7 +1038,8 @@ class _$_CalculatorState implements _CalculatorState {
       this.weight,
       this.age,
       this.showResult,
-      this.changeColor,
+      this.maleColor,
+      this.femaleColor,
       this.result});
 
   @override
@@ -1037,13 +1053,15 @@ class _$_CalculatorState implements _CalculatorState {
   @override
   final bool? showResult;
   @override
-  final bool? changeColor;
+  final bool? maleColor;
+  @override
+  final bool? femaleColor;
   @override
   final String? result;
 
   @override
   String toString() {
-    return 'CalculatorState(gender: $gender, height: $height, weight: $weight, age: $age, showResult: $showResult, changeColor: $changeColor, result: $result)';
+    return 'CalculatorState(gender: $gender, height: $height, weight: $weight, age: $age, showResult: $showResult, maleColor: $maleColor, femaleColor: $femaleColor, result: $result)';
   }
 
   @override
@@ -1061,9 +1079,12 @@ class _$_CalculatorState implements _CalculatorState {
             (identical(other.showResult, showResult) ||
                 const DeepCollectionEquality()
                     .equals(other.showResult, showResult)) &&
-            (identical(other.changeColor, changeColor) ||
+            (identical(other.maleColor, maleColor) ||
                 const DeepCollectionEquality()
-                    .equals(other.changeColor, changeColor)) &&
+                    .equals(other.maleColor, maleColor)) &&
+            (identical(other.femaleColor, femaleColor) ||
+                const DeepCollectionEquality()
+                    .equals(other.femaleColor, femaleColor)) &&
             (identical(other.result, result) ||
                 const DeepCollectionEquality().equals(other.result, result)));
   }
@@ -1076,7 +1097,8 @@ class _$_CalculatorState implements _CalculatorState {
       const DeepCollectionEquality().hash(weight) ^
       const DeepCollectionEquality().hash(age) ^
       const DeepCollectionEquality().hash(showResult) ^
-      const DeepCollectionEquality().hash(changeColor) ^
+      const DeepCollectionEquality().hash(maleColor) ^
+      const DeepCollectionEquality().hash(femaleColor) ^
       const DeepCollectionEquality().hash(result);
 
   @JsonKey(ignore: true)
@@ -1092,7 +1114,8 @@ abstract class _CalculatorState implements CalculatorState {
       Weight? weight,
       Age? age,
       bool? showResult,
-      bool? changeColor,
+      bool? maleColor,
+      bool? femaleColor,
       String? result}) = _$_CalculatorState;
 
   @override
@@ -1106,7 +1129,9 @@ abstract class _CalculatorState implements CalculatorState {
   @override
   bool? get showResult => throw _privateConstructorUsedError;
   @override
-  bool? get changeColor => throw _privateConstructorUsedError;
+  bool? get maleColor => throw _privateConstructorUsedError;
+  @override
+  bool? get femaleColor => throw _privateConstructorUsedError;
   @override
   String? get result => throw _privateConstructorUsedError;
   @override

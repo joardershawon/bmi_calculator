@@ -8,7 +8,8 @@ class CalculatorState with _$CalculatorState {
     @required Weight? weight,
     @required Age? age,
     @required bool? showResult,
-    @required bool? changeColor,
+    @required bool? maleColor,
+    @required bool? femaleColor,
     @required String? result,
   }) = _CalculatorState;
 
@@ -19,6 +20,7 @@ class CalculatorState with _$CalculatorState {
         weight: Weight(50),
         showResult: false,
         result: '',
-        changeColor: false,
+        maleColor: true,
+        femaleColor: false,
       );
 }

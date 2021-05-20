@@ -22,24 +22,27 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
     CalculatorEvent event,
   ) async* {
     var selectedGender;
-    bool selectedColor = false;
+    bool maleColor = false;
+    bool femaleColor = false;
     yield* event.map(
       genderChanged: (e) async* {
         if (e.gender == 'male') {
           selectedGender = enumGender.male;
-          selectedColor = true;
+          maleColor = true;
+          femaleColor = false;
         } else {
           selectedGender = enumGender.female;
-          selectedColor = false;
+          maleColor = false;
+          femaleColor = true;
         }
         yield state.copyWith(
           gender: Gender(
             selectedGender.toString(),
           ),
           showResult: false,
-          changeColor: selectedColor,
+          maleColor: maleColor,
+          femaleColor: femaleColor,
         );
-        print(selectedGender);
       },
       heightChanged: (e) async* {
         yield state.copyWith(

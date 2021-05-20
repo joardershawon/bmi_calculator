@@ -35,13 +35,14 @@ class CalculatorPage extends StatelessWidget {
                     child: ReusableCard(
                       onPress: () {
                         BlocProvider.of<CalculatorBloc>(context).add(
-                          CalculatorEvent.genderChanged(
-                              gender: 'male',
-                              maleColor: true,
-                              femaleColor: false),
+                          const CalculatorEvent.genderChanged(
+                            gender: 'male',
+                            maleColor: true,
+                            femaleColor: false,
+                          ),
                         );
                       },
-                      colour: state.changeColor!
+                      colour: state.maleColor!
                           ? kInactiveCardColour
                           : kActiveCardColour,
                       cardChild: IconContent(
@@ -54,14 +55,14 @@ class CalculatorPage extends StatelessWidget {
                     child: ReusableCard(
                       onPress: () {
                         BlocProvider.of<CalculatorBloc>(context).add(
-                          CalculatorEvent.genderChanged(
+                          const CalculatorEvent.genderChanged(
                             gender: 'female',
                             maleColor: false,
                             femaleColor: true,
                           ),
                         );
                       },
-                      colour: state.changeColor!
+                      colour: state.femaleColor!
                           ? kInactiveCardColour
                           : kActiveCardColour,
                       cardChild: IconContent(
