@@ -28,12 +28,12 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
       genderChanged: (e) async* {
         if (e.gender == 'male') {
           selectedGender = enumGender.male;
-          maleColor = true;
-          femaleColor = false;
+          maleColor = e.maleColor!;
+          femaleColor = e.femaleColor!;
         } else {
           selectedGender = enumGender.female;
-          maleColor = false;
-          femaleColor = true;
+          maleColor = e.maleColor!;
+          femaleColor = e.femaleColor!;
         }
         yield state.copyWith(
           gender: Gender(
@@ -90,7 +90,6 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           result: resultStr,
           showResult: true,
         );
-        print(resultStr);
       },
     );
   }

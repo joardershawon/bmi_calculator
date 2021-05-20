@@ -172,7 +172,9 @@ class CalculatorPage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        onPress: () {},
+                        onPress: () {
+                          none();
+                        },
                       ),
                     ),
                     Expanded(
@@ -223,7 +225,9 @@ class CalculatorPage extends StatelessWidget {
                             )
                           ],
                         ),
-                        onPress: (_) {},
+                        onPress: () {
+                          none();
+                        },
                       ),
                     ),
                   ],
