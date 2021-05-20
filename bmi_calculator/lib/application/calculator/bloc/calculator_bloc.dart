@@ -21,14 +21,25 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
   Stream<CalculatorState> mapEventToState(
     CalculatorEvent event,
   ) async* {
+    var selectedGender;
+    bool selectedColor = false;
     yield* event.map(
       genderChanged: (e) async* {
+        if (e.gender == 'male') {
+          selectedGender = enumGender.male;
+          selectedColor = true;
+        } else {
+          selectedGender = enumGender.female;
+          selectedColor = false;
+        }
         yield state.copyWith(
           gender: Gender(
-            e.gender,
+            selectedGender.toString(),
           ),
           showResult: false,
+          changeColor: selectedColor,
         );
+        print(selectedGender);
       },
       heightChanged: (e) async* {
         yield state.copyWith(
@@ -40,9 +51,16 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
         print(e.height);
       },
       weightChanged: (e) async* {
+        var weight = 0;
+        if (e.iconStr == '+' && e.weight < 120) {
+          weight = e.weight + 1;
+        } else if (e.weight > 0) {
+          weight = e.weight - 1;
+        }
+
         yield state.copyWith(
           weight: Weight(
-            e.weight,
+            weight,
           ),
           showResult: false,
         );
@@ -61,7 +79,6 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           ),
           showResult: false,
         );
-        print(age);
       },
       bmiButtonPressed: (e) async* {
         final result = BmiFunction.calculateBMI(e.calculator);
@@ -70,6 +87,7 @@ class CalculatorBloc extends Bloc<CalculatorEvent, CalculatorState> {
           result: resultStr,
           showResult: true,
         );
+        print(resultStr);
       },
     );
   }

@@ -8,15 +8,17 @@ class CalculatorState with _$CalculatorState {
     @required Weight? weight,
     @required Age? age,
     @required bool? showResult,
+    @required bool? changeColor,
     @required String? result,
   }) = _CalculatorState;
 
   factory CalculatorState.initial() => CalculatorState(
         gender: Gender(enumGender.male.toString()),
-        age: Age(10),
-        height: Height(50),
+        age: Age(25),
+        height: Height(150),
         weight: Weight(50),
         showResult: false,
         result: '',
+        changeColor: false,
       );
 }
